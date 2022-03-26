@@ -162,6 +162,7 @@ class MocoLUFA(ControlSurface):
         self._mixer.master_strip().set_volume_control(self._ctrl_map_sliders[0])
         self._mixer.set_toggle_arm_in_selected_track_button(self._note_map_buttons[41])
         self._mixer.set_toggle_arm_exclusive_in_selected_track_button(self._note_map_buttons[42])
+        self._mixer.set_current_track_volume_encoder(self._ctrl_map_sliders[4])
         for track in range(TRACK_NUMBER):
             strip = self._mixer.channel_strip(track)
             strip.name = 'Channel_Strip_' + str(track)

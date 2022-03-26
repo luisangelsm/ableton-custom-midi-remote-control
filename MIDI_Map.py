@@ -5,7 +5,7 @@
 MATRIX_DEPTH = 0 #number of scenes in the box
 TRACK_NUMBER = 0 #number of tracks for Mixer mapping
 NUMBER_BUTTONS = 43 #number of buttons in BUTTON_VECTOR
-NUMBER_SLIDERS = 4 #number of sliders in SLIDER_VECTOR
+NUMBER_SLIDERS = 5 #number of sliders in SLIDER_VECTOR
 BANKS_NUMBER = 8 #number of parameter banks
 PARAMS_NUMBER = 8 #number of parameters per bank
 PAD_X_NUMBER = 0 #number of pad columns
@@ -244,22 +244,26 @@ BUTTON_VECTOR_CH = (0, #Global play 				[0] Channel
 ###########################################################
 # Single Sliders
 
+# Set here the CC number
 SLIDER_VECTOR = (0, #Master track volume			[0]
                  1, #Cue level control				[1]
                 -1, #Crossfader control				[2]
                 -1, #Tempo control					[3]
+                7, #Current track volume			[4]
                 )
 
 SLIDER_VECTOR_TYPE = (1, #Master track volume		[0] Type
                  1, #Cue level control				[1] Type
                  1, #Crossfader control				[2] Type
                  1, #Tempo control					[3] Type
+                 1, #Current track volume			[4] Type
                 )
 
 SLIDER_VECTOR_CH = (0, #Master track volume			[0] Channel
                  0, #Cue level control				[1] Channel
                  0, #Crossfader control				[2] Channel
                  0, #Tempo control					[3] Channel
+                 0, #Current track volume			[4] Channel
                 )
 
 ###########################################################

@@ -1,5 +1,8 @@
+import Live
 from _Framework.MixerComponent import MixerComponent
 from _Framework.ButtonElement import ButtonElement
+from _Framework.EncoderElement import EncoderElement 
+from _Framework.SubjectSlot import subject_slot 
 from .SpecialChannelStripComponent import SpecialChannelStripComponent
 class SpecialMixerComponent(MixerComponent):
     ' Special mixer class that uses return tracks alongside midi and audio tracks '
@@ -9,12 +12,32 @@ class SpecialMixerComponent(MixerComponent):
         MixerComponent.__init__(self, num_tracks)
         self._toggle_arm_button = None
         self._toggle_arm_exclusive_button = None
+        self._current_track_volume_encoder_control = None
+
+    def disconnect(self):
+        MixerComponent.disconnect(self)
+        #TODO
+        return None
 
     def tracks_to_use(self):
         return tuple(self.song().visible_tracks) + tuple(self.song().return_tracks)
 
     def _create_strip(self):
         return SpecialChannelStripComponent()
+
+    def set_current_track_volume_encoder(self, control):
+        if (self._current_track_volume_encoder_control != None):
+            self._current_track_volume_encoder_control.remove_value_listener(self._set_current_track_volume)
+        self._current_track_volume_encoder_control = control
+        if (self._current_track_volume_encoder_control != None):
+            self._current_track_volume_encoder_control.add_value_listener(self._set_current_track_volume)
+        self.update()
+
+    def _set_current_track_volume(self, value):
+        assert (self._current_track_volume_encoder_control != None)
+        assert (value in range(128))
+        if self.is_enabled():
+            self.song().view.selected_track.mixer_device.volume.value = (value / 127.0)
 
     def set_toggle_arm_in_selected_track_button(self, button):
         assert isinstance(button, (ButtonElement, type(None)))
