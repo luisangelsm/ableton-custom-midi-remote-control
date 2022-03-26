@@ -1,6 +1,6 @@
 # ableton-custom-midi-remote-control
 
-This repo is based on [Generic-Python-Remote-Script](https://github.com/luisangelsm/Generic-Python-Remote-Script)
+This repo is based on [Generic-Python-Remote-Script](https://github.com/j74/Generic-Python-Remote-Script) and also [Selected Track Control](http://stc.wiffbi.com/)
 
 Install it by copying all the python files in a folder called `MocoLUFA` and then place the folder in `\ProgramData\Ableton\Live x.x\Resources\MIDI Remote Scripts\` or `/Contents/App-Resources/MIDI Remote Scripts/` depending if you are in Windows or mac.
 
@@ -19,4 +19,4 @@ I usualy run `tail` to constantly seeing what is going on `tail -f Log.txt`.
 
 ## TODO
 
-- Add mappings to control the current track (volume, arm, etc). Work in progress, arm is already supported.
+- Add more mappings to control the current track. Arming and controlling the volume is already supported.
