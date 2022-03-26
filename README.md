@@ -19,4 +19,4 @@ I usualy run `tail` to constantly seeing what is going on `tail -f Log.txt`.
 
 ## TODO
 
-- Add mappings to control the current track (volume, arm, etc)
+- Add mappings to control the current track (volume, arm, etc). Work in progress, arm is already supported.
