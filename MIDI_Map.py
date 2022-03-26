@@ -4,7 +4,7 @@
 # All other vectors referring to tracks must be TRACK_NUMBER long.
 MATRIX_DEPTH = 0 #number of scenes in the box
 TRACK_NUMBER = 0 #number of tracks for Mixer mapping
-NUMBER_BUTTONS = 41 #number of buttons in BUTTON_VECTOR
+NUMBER_BUTTONS = 43 #number of buttons in BUTTON_VECTOR
 NUMBER_SLIDERS = 4 #number of sliders in SLIDER_VECTOR
 BANKS_NUMBER = 8 #number of parameter banks
 PARAMS_NUMBER = 8 #number of parameters per bank
@@ -119,7 +119,7 @@ BUTTON_VECTOR = (21, #Global play 					[0]
                 -1, #Punch out 						[10]
                 -1, #Overdub on/off 				[11]
                 42, #Metronome on/off 				[12]
-                36, #Record quantization on/off 	[13]
+                -1, #Record quantization on/off 	[13]
                 -1, #Detail view switch 			[14]
                 -1, #Clip/Track view switch 		[15]
                 -1, #Device Lock (lock "blue hand")	[16]
@@ -147,6 +147,8 @@ BUTTON_VECTOR = (21, #Global play 					[0]
                 -1, #Stop all clips 				[38]
                 -1, #Master track select			[39]
                 32, #Session record                 [40]
+                36, #Selected track toggle arm      [41]
+                -1, #Selected track toggle arm exclusive [42]
                 )
 
 BUTTON_VECTOR_TYPE = (0, #Global play 				[0] Type
@@ -190,6 +192,8 @@ BUTTON_VECTOR_TYPE = (0, #Global play 				[0] Type
                  0, #Stop all clips 				[38] Type
                  0, #Master track select			[39] Type
                  0, #Session record                 [40] Type
+                 0, #Selected track toggle arm      [41] Type
+                 0, #Selected track toggle arm exclusive [42] Type
                 )
 
 BUTTON_VECTOR_CH = (0, #Global play 				[0] Channel
@@ -233,6 +237,8 @@ BUTTON_VECTOR_CH = (0, #Global play 				[0] Channel
                 0, #Stop all clips 				[38] Channel
                 0, #Master track select			[39] Channel
                 0, #Session record                 [40] Channel
+                0, #Selected track toggle arm      [41] Channel
+                0, #Selected track toggle arm exclusive [42]
                 )
 
 ###########################################################

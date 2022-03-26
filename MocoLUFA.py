@@ -160,6 +160,8 @@ class MocoLUFA(ControlSurface):
         self._mixer.set_crossfader_control(self._ctrl_map_sliders[2])
         self._mixer.set_prehear_volume_control(self._ctrl_map_sliders[1])
         self._mixer.master_strip().set_volume_control(self._ctrl_map_sliders[0])
+        self._mixer.set_toggle_arm_in_selected_track_button(self._note_map_buttons[41])
+        self._mixer.set_toggle_arm_exclusive_in_selected_track_button(self._note_map_buttons[42])
         for track in range(TRACK_NUMBER):
             strip = self._mixer.channel_strip(track)
             strip.name = 'Channel_Strip_' + str(track)
@@ -255,7 +257,6 @@ class MocoLUFA(ControlSurface):
             else:
                 button = ButtonElement(is_momentary, BUTTON_VECTOR_TYPE[button_id], BUTTON_VECTOR_CH[button_id], BUTTON_VECTOR[button_id])
                 button.name = 'Global_Button_' + str(button_id)
-                print(button.name)
             self._note_map_buttons.append(button)
         # SLIDER_VECTOR Sliders
         for slider_id in range(NUMBER_SLIDERS):
