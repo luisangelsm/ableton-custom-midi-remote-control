@@ -10,12 +10,12 @@ I use it to control Ableton from a pedal board I built using arduino.
 
 ## Debug tips
 
-Since this kind of scripts aren't really supported by Ableton modifying them is always kind of tricky and it requires some trial and error. If for some reasong the script isn't working, check Ableton's Log.txt file:
+Since this kind of scripts aren't really supported by Ableton, modifying them is always kind of tricky and it requires some trial and error. If for some reason the script isn't working, check Ableton's Log.txt file:
 
     Windows - \Users\[username]\AppData\Roaming\Ableton\Live x.x.x\Preferences\Log.txt
     Mac - /Users/[username]/Library/Preferences/Ableton/Live x.x.x/Log.txt
     
-I usualy run `tail` to constantly seeing what is going on `tail -f Log.txt`.
+I usualy run `tail` to constantly seeing what is going on: `tail -f Log.txt`.
 
 ## TODO
 
